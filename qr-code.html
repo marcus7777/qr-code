@@ -7,17 +7,15 @@
 <dom-module id="qr-code">
   <template>
     <style>:host {display:inline-block}</style>
-    <canvas style="width:100%;height:100%" id="qr"></canvas>
+    <a href="{{href}}"><canvas style="width:100%;height:100%" id="qr"></canvas></a>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: "qr-code",
     properties:{
-      value:{
-        type:String,
-        value:"https://open-elements.firebaseapp.com/bower_components/pair-production/demo.html",
-      },
+      href:String,
+      value:String,
       qr:{
         computed:"getQr(value,size,foreground,background,level)",
       },
@@ -37,6 +35,11 @@
         type:String,
         value:"H",
       },
+    },
+    ready: function() {
+      if (this.href) {
+        this.value = this.href
+      }
     },
     getQr: function(value,size,foreground,background,level){
       var qrEle = this.$.qr
