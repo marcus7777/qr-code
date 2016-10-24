@@ -1,0 +1,14 @@
+{
+  "name": "qr-code",
+  "version": "1.0.0",
+  "description": "\n    \n    \n    \n  ",
+  "main": "qr-code.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "qr-ious": "marcus7777/qr-ious#a10d5cc016",
+    "polymer": "*"
+  }
+}
